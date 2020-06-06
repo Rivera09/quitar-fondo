@@ -1,0 +1,107 @@
+ for (int x = PX; (x >= 0 && x < ImagenFinal.getWidth()); x--) {
+            for (int y = PY; (y >= 0 && y < ImagenFinal.getHeight()); y++) {
+                getcolor(x, y);
+                if (R == colorQuitar.getRed() && G == colorQuitar.getGreen() && B == colorQuitar.getBlue()) {
+                    ImagenFinal.setRGB(x, y, 256 * 256 * 256 * 256);
+                } else {
+                    break;
+                }
+            }
+            //-----------------------------------------segunda Y
+            for (int y = PY; y >= 0; y--) {
+                getcolor(x, y);
+                if (R == colorQuitar.getRed() && G == colorQuitar.getGreen() && B == colorQuitar.getBlue()) {
+                    ImagenFinal.setRGB(x, y, 256 * 256 * 256 * 256);
+                } else {
+                    break;
+                }
+            }
+            getcolor(x, PY);
+            if (R != colorQuitar.getRed() && G != colorQuitar.getGreen() && B != colorQuitar.getBlue()) {
+                break;
+            }
+        }
+        //-----x2
+        for (int x = PX; x < ImagenFinal.getWidth(); x++) {
+            for (int y = PY; (y >= 0 && y < ImagenFinal.getHeight()); y++) {
+                getcolor(x, y);
+                if (R == colorQuitar.getRed() && G == colorQuitar.getGreen() && B == colorQuitar.getBlue()) {
+                    ImagenFinal.setRGB(x, y, 256 * 256 * 256 * 256);
+                } else {
+                    break;
+                }
+            }
+            //-----------------------------------------segunda Y
+            for (int y = PY; y >= 0; y--) {
+                getcolor(x, y);
+                if (R == colorQuitar.getRed() && G == colorQuitar.getGreen() && B == colorQuitar.getBlue()) {
+                    ImagenFinal.setRGB(x, y, 256 * 256 * 256 * 256);
+                } else {
+                    break;
+                }
+            }
+            getcolor(x, PY);
+            if (R != colorQuitar.getRed() && G != colorQuitar.getGreen() && B != colorQuitar.getBlue()) {
+                break;
+            }
+        }
+        repintar();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Color colorQuitando;
+        getcolor(PX, PY);
+        colorQuitar = new Color(R, G, B);
+        System.out.println("for");
+        for (int x = PX; (x >= 0 && x < ImagenFinal.getWidth()); x--) {
+            for (int y = PY + 1; (y >= 0 && y < ImagenFinal.getHeight()); y++) {
+                for (int x2 = PX; (x2 >= 0) && (x2 < ImagenFinal.getWidth()); x2++) {
+                    getcolor(x2, y);
+                    colorQuitando = new Color(R, G, B);
+                    if (colorQuitando.getRGB() == colorQuitar.getRGB()) {
+                        ImagenFinal.setRGB(x2, y, 256 * 256 * 256 * 256);
+                    }
+                }
+            }
+        }
+        System.out.println("terminado");
+        repintar();
